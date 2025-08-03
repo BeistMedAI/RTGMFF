@@ -102,11 +102,10 @@ By eliminating randomness and heavy generative models, it delivers reproducible 
 
 ### 1&nbsp; ROI Statistical Features
 * Each 4-D fMRI scan is parcellated into **116** regions of interest (AAL-116 atlas).  
-* After temporal denoising, the mean BOLD response per ROI forms a 116-dimensional vector  
+* After temporal denoising, the mean BOLD response per ROI forms a 116-dimensional vector:
 
-$$
-\mathbf{v} = \bigl[\Delta \mathrm{BOLD}_1,\dots,\Delta \mathrm{BOLD}_{116}\bigr].
-$$
+v = [Δ BOLD₁, …, Δ BOLD₁₁₆]
+
 
 ### 2&nbsp; Task-specific Ternary Discretisation
 For every ROI \(i\) we jointly learn two thresholds \((\tau_1,\tau_2)\) on the training set
@@ -127,11 +126,8 @@ p_i =
 \end{cases}
 \]$$
 
-> **Typical thresholds** on ADHD-200 and ABIDE converge to  
-> \(\tau_1 \approx 0.15,\;\tau_2 \approx 0.30\) (see Fig.&nbsp;4 in the paper).
-
 ### 3&nbsp; Demographic Conditional Modulation
-Age and sex are encoded as  
+Age and sex are encoded as:  
 
 $$
 d = \bigl[\text{age}_\mathrm{z},\,\text{male},\,\text{female}\bigr]
