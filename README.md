@@ -106,29 +106,23 @@ v = [Δ BOLD₁, …, Δ BOLD₁₁₆]
 
 
 ### 2&nbsp; Task-specific Ternary Discretisation
-For every ROI \(i\) we jointly learn two thresholds on the training set (via nested cross-validation) that maximise diagnostic accuracy.
+For every ROI \(i\) we jointly learn two thresholds on the training set (via nested cross-validation) that maximise diagnostic accuracy:
 
-$$
-s_i =
-\begin{cases}
-\textbf{strong},    & |v_i| \ge \tau_2 \\
-\textbf{moderate},  & \tau_1 \le |v_i| < \tau_2 \\
-\textbf{weak},      & |v_i| < \tau_1
-\end{cases},
-\qquad
-p_i =
-\begin{cases}
-\uparrow & v_i \ge 0\\
-\downarrow & v_i < 0
-\end{cases}
-$$
+<div align="center">
+
+![alt text2](figures/formula1.png)
+ 
+</div>
+
 
 ### 3&nbsp; Demographic Conditional Modulation
 Age and sex are encoded as:  
 
-$$
-d = \bigl[\text{age}_\mathrm{z},\,\text{male},\,\text{female}\bigr]
-$$
+<div align="center">
+
+![alt text3](figures/formula2.png)
+ 
+</div>
 
 and injected via **FiLM** layers to modulate intermediate visual and textual representations, embedding population priors directly into the feature space.
 
