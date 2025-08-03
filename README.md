@@ -93,10 +93,6 @@ All training hyperparameters can be recorded by specifying `--save-path` for mod
 
 ## 📝 Highlight: ROI-driven fMRI Text Generation (RFTG)
 
-<script type="text/javascript" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
 RFTG produces **deterministic, interpretable** text tokens from fMRI volumes without any trainable parameters.  
 By eliminating randomness and heavy generative models, it delivers reproducible descriptions that radiologists can audit line-by-line.
 
@@ -104,8 +100,9 @@ By eliminating randomness and heavy generative models, it delivers reproducible 
 * Each 4-D fMRI scan is parcellated into **116** regions of interest (AAL-116 atlas).  
 * After temporal denoising, the mean BOLD response per ROI forms a 116-dimensional vector:
 
+<div align="center">
 v = [Δ BOLD₁, …, Δ BOLD₁₁₆]
-
+<div align="center">
 
 ### 2&nbsp; Task-specific Ternary Discretisation
 For every ROI \(i\) we jointly learn two thresholds \((\tau_1,\tau_2)\) on the training set
