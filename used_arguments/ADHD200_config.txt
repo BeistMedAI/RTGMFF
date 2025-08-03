@@ -1,0 +1,12 @@
+--dataset-name ADHD200
+--dataset-path /path/to/ADHD200
+--atlas-path /path/to/atlas/AAL116.nii.gz
+--model-size base
+--patch-size 8
+--epochs 20
+--batch-size 8
+--learning-rate 0.0001
+--weight-decay 0.0001
+--loss ce
+--tau1 0.15
+--tau2 0.30

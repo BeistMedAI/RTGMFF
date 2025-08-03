@@ -1,0 +1,13 @@
+--dataset-name ABIDE
+--dataset-path /path/to/ABIDE
+--atlas-path /path/to/atlas/AAL116.nii.gz
+--model-size base
+--patch-size 8
+--epochs 20
+--batch-size 8
+--learning-rate 0.0001
+--weight-decay 0.0001
+--loss ce
+--use-ssm
+--tau1 0.15
+--tau2 0.30
