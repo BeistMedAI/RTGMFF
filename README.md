@@ -15,18 +15,16 @@ Functional magnetic resonance imaging (fMRI) measures spontaneous brain activity
 
 ## 😖 Current Challenges
 
-1. **High dimensionality vs. small sample size** – fMRI volumes contain tens of thousands of voxels but relatively few subjects, increasing the risk of overfitting.
-2. **Limited ability to capture multi‑scale patterns** – existing models often use either handcrafted features or standard CNNs which may miss long‑range temporal dependencies and global spatial patterns.
-3. **Modality integration** – demographic variables and region‑level activations provide complementary information that is difficult to fuse with imaging features.
-4. **Lack of flexibility** – many pipelines are tied to a single architecture (e.g. CNN or transformer) and cannot easily explore alternatives such as state‑space models.
+1. FMRI data typically lack accompanying textual descriptions, which are vital for interpreting brain-region connectivity and activity. 
+2. Existing feature-extraction models underuse frequency-domain cues and rarely integrate frequency-spatial information within a unified representation.
 
 ## 🌟 Primary Contributions
 
 To address these limitations, we propose RTGMFF, an enhanced fMRI-based brain disorder diagnosis pipeline that leverages ROI-driven fMRI text generation and multimodal feature fusion. Our contributions are summarized as follows: 
 
-1. A deterministic ROI-driven text generator that fuses subject-specific activation statistics with demographic information to yield compact, reproducible tokens.
-2. A global–local embedding aggregation module that couples a Hierarchical Wavelet–Mamba branch with a Cross-Scale Transformer Encoder, jointly modeling frequency-domain structure and long-range spatial dependencies.
-3. An adaptive semantic alignment module that embeds the ROI token sequence and aligns it with visual representations through learnable projections and a cosine-based alignment loss with regularization to mitigate modality mismatch.
+1. A deterministic ROI-driven fMRI text generator that fuses subject-specific activation statistics with demographic information to yield compact, reproducible tokens.
+2. A hybrid frequency-spatial encoder that couples a hierarchical wavelet–mamba branch with a cross-scale Transformer encoder, jointly modeling frequency-domain structure and long-range spatial dependencies.
+3. An adaptive semantic alignment module that embeds the ROI token sequence and aligns it with visual features through learnable projections and a cosine-based alignment loss with regularization to mitigate modality mismatch.
 
 ## ⚙️ Prerequisites
 
