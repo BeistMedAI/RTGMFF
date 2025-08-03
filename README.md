@@ -106,8 +106,7 @@ v = [Δ BOLD₁, …, Δ BOLD₁₁₆]
 
 
 ### 2&nbsp; Task-specific Ternary Discretisation
-For every ROI \(i\) we jointly learn two thresholds \((\tau_1,\tau_2)\) on the training set
-(via nested cross-validation) that maximise diagnostic accuracy.
+For every ROI \(i\) we jointly learn two thresholds on the training set (via nested cross-validation) that maximise diagnostic accuracy.
 
 $$
 s_i =
