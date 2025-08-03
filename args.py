@@ -86,14 +86,6 @@ def parse_args() -> argparse.Namespace:
             " 'focal' for focal loss, 'label_smooth' or 'ls' for label smoothing."
         ),
     )
-    # Model architecture options
-    parser.add_argument(
-        "--model-size",
-        type=str,
-        choices=["small", "base", "large"],
-        default="base",
-        help="Select the base dimensionality for the model (see model.py for details)."
-    )
     parser.add_argument(
         "--patch-size",
         type=int,
@@ -143,25 +135,6 @@ def parse_args() -> argparse.Namespace:
         help="Dropout rate for feed‑forward networks inside the HWM branch."
     )
     parser.add_argument(
-        "--use-ssm",
-        action="store_true",
-        help=(
-            "Replace the cross‑scale Transformer encoder with a Mamba‑inspired "
-            "state‑space model (SSM).  This backbone selectively propagates or "
-            "forgets information along token sequences【859331777488541†L50-L65】."
-        ),
-    )
-    parser.add_argument(
-        "--use-vit",
-        action="store_true",
-        help=(
-            "Use a pure Vision Transformer (ViT) backbone for the image branch"
-            " instead of the default cross‑scale encoder.  ViTs split an image"
-            " into fixed‑size patches, embed each patch and process the sequence"
-            " with multi‑head self‑attention【141199850673451†L352-L362】."
-        ),
-    )
-    parser.add_argument(
         "--use-extra-mlp",
         action="store_true",
         help="Enable an additional MLP on the fused visual representation."
@@ -183,11 +156,6 @@ def parse_args() -> argparse.Namespace:
         "--pretrained",
         type=str,
         default=None,
-        help=(
-            "Optional path or HuggingFace model name from which to load"
-            " pretrained weights for the state‑space backbone.  For example,"
-            " state‑spaces/mamba-130m or a local .pth file【995923299886983†L410-L433】."
-        ),
     )
     parser.add_argument(
         "--save-path",
