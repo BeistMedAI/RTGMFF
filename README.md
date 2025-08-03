@@ -93,6 +93,10 @@ All training hyperparameters can be recorded by specifying `--save-path` for mod
 
 ## 📝 Highlight: ROI-driven fMRI Text Generation (RFTG)
 
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 RFTG produces **deterministic, interpretable** text tokens from fMRI volumes without any trainable parameters.  
 By eliminating randomness and heavy generative models, it delivers reproducible descriptions that radiologists can audit line-by-line.
 
@@ -100,15 +104,15 @@ By eliminating randomness and heavy generative models, it delivers reproducible 
 * Each 4-D fMRI scan is parcellated into **116** regions of interest (AAL-116 atlas).  
 * After temporal denoising, the mean BOLD response per ROI forms a 116-dimensional vector  
 
-\[
+$$
 \mathbf{v} = \bigl[\Delta \mathrm{BOLD}_1,\dots,\Delta \mathrm{BOLD}_{116}\bigr].
-\]
+$$
 
 ### 2&nbsp; Task-specific Ternary Discretisation
 For every ROI \(i\) we jointly learn two thresholds \((\tau_1,\tau_2)\) on the training set
 (via nested cross-validation) that maximise diagnostic accuracy.
 
-\[
+$$
 s_i =
 \begin{cases}
 \textbf{strong},    & |v_i| \ge \tau_2 \\
@@ -121,7 +125,7 @@ p_i =
 \uparrow & v_i \ge 0\\
 \downarrow & v_i < 0
 \end{cases}
-\]
+\]$$
 
 > **Typical thresholds** on ADHD-200 and ABIDE converge to  
 > \(\tau_1 \approx 0.15,\;\tau_2 \approx 0.30\) (see Fig.&nbsp;4 in the paper).
@@ -129,9 +133,9 @@ p_i =
 ### 3&nbsp; Demographic Conditional Modulation
 Age and sex are encoded as  
 
-\[
+$$
 d = \bigl[\text{age}_\mathrm{z},\,\text{male},\,\text{female}\bigr]
-\]
+$$
 
 and injected via **FiLM** layers to modulate intermediate visual and textual representations, embedding population priors directly into the feature space.
 
