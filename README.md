@@ -102,7 +102,8 @@ By eliminating randomness and heavy generative models, it delivers reproducible 
 
 <div align="center">
 v = [Δ BOLD₁, …, Δ BOLD₁₁₆]
-<div align="center">
+</div>
+
 
 ### 2&nbsp; Task-specific Ternary Discretisation
 For every ROI \(i\) we jointly learn two thresholds \((\tau_1,\tau_2)\) on the training set
