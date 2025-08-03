@@ -121,7 +121,7 @@ p_i =
 \uparrow & v_i \ge 0\\
 \downarrow & v_i < 0
 \end{cases}
-\]$$
+$$
 
 ### 3&nbsp; Demographic Conditional Modulation
 Age and sex are encoded as:  
